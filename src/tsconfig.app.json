@@ -1,0 +1,21 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../out-tsc/app",
+    "types": [],
+    "paths": {
+      "@nanostores/angular": [
+        "../projects/ng-nanostores/src/"
+      ],
+      "@angular/*": [ "./node_modules/@angular/*"]
+    }
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ],
+  "angularCompilerOptions": {
+    "enableIvy": true
+  }
+}

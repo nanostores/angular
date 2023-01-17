@@ -1,0 +1,3 @@
+<h2>With async pipe:</h2>
+<button (click)="addApple()">Add apple</button>
+<p *ngFor="let fruit of fruits$ | async">Fruit {{ fruit.name }} costs {{ fruit.cost }}$</p>
