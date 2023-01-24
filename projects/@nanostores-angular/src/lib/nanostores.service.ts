@@ -1,5 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, distinctUntilChanged, filter, map, Observable, ReplaySubject, takeUntil } from 'rxjs';
+import { BehaviorSubject,  Observable, ReplaySubject,  } from 'rxjs';
+import { distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
 import { Store } from 'nanostores';
 
 @Injectable({
@@ -9,14 +10,17 @@ export class NanostoresService<T> implements OnDestroy {
   private unbind: () => void = () => {};
   private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 
-  useStore(key: string, store: Store): Observable<T> {
-    let state$ = new BehaviorSubject<{key: string, value: T}>({key: key, value: store.get()});
+  /** 
+  * @param store Store instance.
+  * @returns Observable that contains current Store value.
+  */
+  useStore(store: Store): Observable<T> {
+    let state$ = new BehaviorSubject<T>(store.get());
     this.unbind = store.subscribe(value => {
-      state$.next({key: key, value: value});
+      state$.next(value);
     });
     return state$.pipe(
-      filter(state => state?.key === key),
-      map(state => state?.value),
+      map(state => state),
       distinctUntilChanged(),
       takeUntil(this.destroyed$)
     );

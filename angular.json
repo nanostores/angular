@@ -78,25 +78,25 @@
         }
       }
     },
-    "ng-nanostores": {
+    "@nanostores-angular": {
       "projectType": "library",
-      "root": "projects/ng-nanostores",
-      "sourceRoot": "projects/ng-nanostores/src",
+      "root": "projects/@nanostores-angular",
+      "sourceRoot": "projects/@nanostores-angular/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ng-nanostores/tsconfig.lib.json",
-            "project": "projects/ng-nanostores/ng-package.json"
+            "tsConfig": "projects/@nanostores-angular/tsconfig.lib.json",
+            "project": "projects/@nanostores-angular/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-nanostores/src/test.ts",
-            "tsConfig": "projects/ng-nanostores/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-nanostores/karma.config.js"
+            "main": "projects/@nanostores-angular/src/test.ts",
+            "tsConfig": "projects/@nanostores-angular/tsconfig.spec.json",
+            "karmaConfig": "projects/@nanostores-angular/karma.config.js"
           }
         }
       }

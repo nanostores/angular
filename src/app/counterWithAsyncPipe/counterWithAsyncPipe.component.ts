@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NanostoresService } from '../../../projects/ng-nanostores/src';
+import { NanostoresService } from '@nanostores/angular';
 import { counter } from '../stores/counter';
 
 @Component({
@@ -7,7 +7,7 @@ import { counter } from '../stores/counter';
   templateUrl: './counterWithAsyncPipe.component.html'
 })
 export class CounterWithAsyncPipe {
-  counter$ = this.nanostores.useStore('counter', counter);
+  counter$ = this.nanostores.useStore(counter);
 
   constructor(private nanostores: NanostoresService<number>) { }
 

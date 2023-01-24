@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NanostoresService } from '../../../projects/ng-nanostores/src';
+import { NanostoresService } from '@nanostores/angular';
 import { profile, ProfileValue } from '../stores/profile';
 
 @Component({
@@ -7,7 +7,7 @@ import { profile, ProfileValue } from '../stores/profile';
   templateUrl: './profile.component.html'
 })
 export class ProfileComponent implements OnInit {
-  profile$ = this.nanostores.useStore('profile', profile);
+  profile$ = this.nanostores.useStore(profile);
   text: string = '';
 
   constructor(private nanostores: NanostoresService<ProfileValue>) { }

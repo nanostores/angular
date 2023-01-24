@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NANOSTORES, NanostoresService } from '../../projects/ng-nanostores/src';
+import { NANOSTORES, NanostoresService } from '@nanostores/angular';
 
 import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NanostoresService } from '../../projects/ng-nanostores/src';
+import { NanostoresService } from '@nanostores/angular';
 import { counter } from './stores/counter';
 import { fruits } from './stores/fruits';
 
@@ -9,8 +9,8 @@ import { fruits } from './stores/fruits';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  counter$ = this.nanostores.useStore('counter', counter);
-  fruits$ = this.nanostores.useStore('fruits', fruits);
+  counter$ = this.nanostores.useStore(counter);
+  fruits$ = this.nanostores.useStore(fruits);
 
   constructor(private nanostores: NanostoresService<number>) { }
 

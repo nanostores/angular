@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NanostoresService } from '../../../projects/ng-nanostores/src';
+import { NanostoresService } from '@nanostores/angular';
 import { counter } from '../stores/counter';
 import { filteredFruits } from '../stores/filteredFruits';
 import { Fruit, fruits } from '../stores/fruits';
@@ -9,7 +9,7 @@ import { Fruit, fruits } from '../stores/fruits';
   templateUrl: './filtered-fruits.component.html'
 })
 export class FilteredFruitsComponent implements OnInit {
-  filteredFruits$ = this.nanostores.useStore('filteredFruits', filteredFruits);
+  filteredFruits$ = this.nanostores.useStore(filteredFruits);
   texts: string[] = [];
 
   constructor(private nanostores: NanostoresService<Fruit[]>) { }

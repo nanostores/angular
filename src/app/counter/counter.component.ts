@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NanostoresService } from '../../../projects/ng-nanostores/src';
+import { NanostoresService } from '@nanostores/angular';
 import { counter } from '../stores/counter';
 
 @Component({
@@ -7,7 +7,7 @@ import { counter } from '../stores/counter';
   templateUrl: './counter.component.html'
 })
 export class CounterComponent implements OnInit {
-  counter$ = this.nanostores.useStore('counter', counter);
+  counter$ = this.nanostores.useStore(counter);
   text: string = 'Total: ';
 
   constructor(private nanostores: NanostoresService<number>) { }

@@ -6,9 +6,9 @@
     "types": [],
     "paths": {
       "@nanostores/angular": [
-        "../projects/ng-nanostores/src/"
+        "../projects/@nanostores-angular/src/"
       ],
-      "@angular/*": [ "./node_modules/@angular/*"]
+      "@angular/*": [ "./node_modules/@angular/*"],
     }
   },
   "exclude": [

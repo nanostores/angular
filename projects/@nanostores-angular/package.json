@@ -11,8 +11,8 @@
     "angular"
   ],
   "peerDependencies": {
-    "@angular/common": "^15.0.0",
-    "@angular/core": "^15.0.0",
+    "@angular/common": "^12.2.17",
+    "@angular/core": "^12.2.17",
     "nanostores": "^0.7.1"
   }
 }

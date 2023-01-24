@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NanostoresService } from '../../../projects/ng-nanostores/src';
+import { NanostoresService } from '@nanostores/angular';
 import { Fruit, fruits } from '../stores/fruits';
 
 @Component({
@@ -7,7 +7,7 @@ import { Fruit, fruits } from '../stores/fruits';
   templateUrl: './fruits-with-async-pipe.component.html'
 })
 export class FruitsWithAsyncPipeComponent {
-  fruits$ = this.nanostores.useStore('fruits', fruits);
+  fruits$ = this.nanostores.useStore(fruits);
 
   constructor(private nanostores: NanostoresService<Fruit[]>) { }
 
