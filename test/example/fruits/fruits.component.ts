@@ -8,18 +8,18 @@ import { Fruit, fruits } from '../stores/fruits';
 })
 export class FruitsComponent implements OnInit {
   fruits$ = this.nanostores.useStore(fruits);
-  texts: string[] = [];
+  lines: string[] = [];
 
   constructor(private nanostores: NanostoresService<Fruit[]>) { }
 
   ngOnInit() {
-    this.fruits$.subscribe(fruits => this.texts = fruits.map(fruit => `Fruit ${fruit.name} costs ${fruit.cost}$`));
+    this.fruits$.subscribe(fruits => this.lines = fruits.map(fruit => `Fruit ${fruit.name} costs ${fruit.cost}$`));
   }
 
   addBanana() {
     const banana = {
       name: 'Banana',
-      cost: 8
+      cost: 2
     }
     fruits.set([...fruits.get(), banana])
   }

@@ -45,7 +45,7 @@ import { Fruit, fruits } from "../stores/fruits";
 @Component({
   selector: "app-root",
   template:
-    '<p *ngFor="let fruit of fruits$ | async">{{ fruit.name }}: {{ fruit.cost }}$</p>',
+    '<p *ngFor="let fruit of fruits$ | async">Fruit {{ fruit.name }} costs {{ fruit.cost }}$</p>',
 })
 export class AppComponent {
   fruits$ = this.nanostores.useStore(fruits);
@@ -74,7 +74,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.fruits$.subscribe(
       (fruits) =>
-        (this.lines = fruits.map((fruit) => `${fruit.name}: ${fruit.cost}$`))
+        (this.lines = fruits.map((fruit) => `Fruit ${fruit.name} costs ${fruit.cost}$`))
     );
   }
 }
