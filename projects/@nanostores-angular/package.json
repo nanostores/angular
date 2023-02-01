@@ -2,6 +2,7 @@
   "name": "@nanostores/angular",
   "version": "0.0.1",
   "description": "Angular integration for Nano Stores, a tiny state manager with many atomic tree-shakable stores",
+  "license": "MIT",
   "keywords": [
     "store",
     "state",
@@ -14,5 +15,9 @@
     "@angular/common": "^12.2.17",
     "@angular/core": "^12.2.17",
     "nanostores": "^0.7.1"
+  },
+  "engines": {
+    "node": ">= 16.18.1",
+    "npm": ">= 9.3.0"
   }
 }
