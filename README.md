@@ -34,7 +34,7 @@ import { IUser, User } from '../stores/user';
 
 @Component({
   selector: "app-root",
-  template: "<p *ngIf="(currentUser$ | async) as user">{{ user.name }}</p>"
+  template: '<p *ngIf="(currentUser$ | async) as user">{{ user.name }}</p>'
 })
 export class AppComponent {
   currentUser$: Observable<IUser> = this.nanostores.useStore(profile)
@@ -55,7 +55,7 @@ import { User } from '../stores/user';
 
 @Component({
   selector: "app-root",
-  template: "<p>{{ text }}</p>"
+  template: '<p>{{ text }}</p>'
 })
 export class AppComponent implements OnInit {
   text = '';
