@@ -24,7 +24,7 @@ describe('NanostoresService', () => {
   }));
 
   it('should get state observable by property key', (done) => {
-    const service: NanostoresService<typeof mockState> = TestBed.get(NanostoresService);
+    const service: NanostoresService = TestBed.get(NanostoresService);
     const name$ = service.useStore(mockStore as Store);
 
     name$.subscribe(value => {
@@ -34,7 +34,7 @@ describe('NanostoresService', () => {
   });
 
   it('should set state by property key', (done) => {
-    const service: NanostoresService<typeof mockState> = TestBed.get(NanostoresService);
+    const service: NanostoresService = TestBed.get(NanostoresService);
     const changedState = { value: 'new state' };
 
     // @ts-expect-error

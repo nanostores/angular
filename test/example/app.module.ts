@@ -3,14 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NANOSTORES, NanostoresService } from '@nanostores/angular';
 
 import { AppComponent } from './app.component';
-import { FruitsWithAsyncPipeComponent } from './fruits-with-async-pipe/fruits-with-async-pipe.component';
-import { FruitsComponent } from './fruits/fruits.component';
+import { CurrentUserAsyncPipeComponent } from './current-user-async-pipe/current-user-async-pipe.component';
+import { CurrentUserComponent } from './current-user/current-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FruitsComponent,
-    FruitsWithAsyncPipeComponent,
+    CurrentUserComponent,
+    CurrentUserAsyncPipeComponent,
   ],
   imports: [
     BrowserModule

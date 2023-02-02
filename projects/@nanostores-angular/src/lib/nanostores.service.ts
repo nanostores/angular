@@ -6,7 +6,7 @@ import { Store } from 'nanostores';
 @Injectable({
   providedIn: 'root'
 })
-export class NanostoresService<T> implements OnDestroy {
+export class NanostoresService implements OnDestroy {
   private unbind: () => void = () => {};
   private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 
@@ -14,8 +14,9 @@ export class NanostoresService<T> implements OnDestroy {
   * @param store Store instance.
   * @returns Observable that contains current Store value.
   */
-  useStore(store: Store): Observable<T> {
-    let state$ = new BehaviorSubject<T>(store.get());
+  // useStore(store: Store):  Observable<StoreValue<SomeStore>>;
+  useStore(store: Store): Observable<any> {
+    let state$ = new BehaviorSubject(store.get());
     this.unbind = store.subscribe(value => {
       state$.next(value);
     });
@@ -29,6 +30,8 @@ export class NanostoresService<T> implements OnDestroy {
   ngOnDestroy(): void {
     this.destroyed$.next(true);
     this.destroyed$.complete();
-    this.unbind();
+    if (this.unbind) {
+      this.unbind();
+    }
   }
 }

@@ -6,7 +6,7 @@
 Angular integration for **[Nano Stores]**, a tiny state manager
 with many atomic tree-shakable stores.
 
-## Install
+## How to install
 
 ```sh
 npm install @nanostores/angular
@@ -20,62 +20,57 @@ import { NANOSTORES, NanostoresService } from '@nanostores/angular';
 
 @NgModule({ providers: [{ provide: NANOSTORES, useClass: NanostoresService }], ... })
 export class AppModule { }
-
-// Store example
-import { atom } from 'nanostores';
-
-// State structure
-export type Fruit = {
-  name: string;
-  cost: number;
-}
-
-export const fruits = atom<Fruit[]>([]);
 ```
 
 **app.component.ts:**
 
 ```tsx
 // example using async pipes:
-import { Component } from "@angular/core";
-import { NanostoresService } from "@nanostores/angular";
+import { Component } from '@angular/core';
+import { NanostoresService } from '@nanostores/angular';
+import { Observable, switchMap } from 'rxjs';
 
-import { Fruit, fruits } from "../stores/fruits";
+import { profile } from '../stores/profile';
+import { IUser, User } from '../stores/user';
 
 @Component({
   selector: "app-root",
-  template:
-    '<p *ngFor="let fruit of fruits$ | async">Fruit {{ fruit.name }} costs {{ fruit.cost }}$</p>',
+  template: "<p *ngIf="(currentUser$ | async) as user">{{ user.name }}</p>"
 })
 export class AppComponent {
-  fruits$ = this.nanostores.useStore(fruits);
+  currentUser$: Observable<IUser> = this.nanostores.useStore(profile)
+    .pipe(switchMap(userId => {
+        return this.nanostores.useStore(User(userId));
+      })
+    );
 
-  constructor(private nanostores: NanostoresService<Fruit[]>) {}
+  constructor(private nanostores: NanostoresService) { }
 }
 ```
 
 ```tsx
 // example without async pipes:
-import { Component, OnInit } from "@angular/core";
-import { NanostoresService } from "@nanostores/angular";
+import { Component, OnInit } from '@angular/core';
+import { NanostoresService } from '@nanostores/angular';
+import { switchMap } from 'rxjs';
 
-import { Fruit, fruits } from "../stores/fruits";
+import { profile } from '../stores/profile';
+import { User } from '../stores/user';
 
 @Component({
   selector: "app-root",
-  template: '<p *ngFor="let line of lines">{{ line }}</p>',
+  template: "<p>{{ text }}</p>"
 })
 export class AppComponent implements OnInit {
-  fruits$ = this.nanostores.useStore(fruits);
-  lines: string[] = [];
+  text = '';
 
-  constructor(private nanostores: NanostoresService<Fruit[]>) {}
+  constructor(private nanostores: NanostoresService) { }
 
   ngOnInit() {
-    this.fruits$.subscribe(
-      (fruits) =>
-        (this.lines = fruits.map((fruit) => `Fruit ${fruit.name} costs ${fruit.cost}$`))
-    );
+    this.nanostores.useStore(profile).pipe(
+      switchMap((userId: string) => this.nanostores.useStore(User(userId)))
+    )
+    .subscribe(user => this.text = `User name is ${user.name}`);
   }
 }
 ```
