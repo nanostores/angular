@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NanostoresService } from '@nanostores/angular';
+import { User } from '../stores/user';
+import { profile } from '../stores/profile';
 import { switchMap } from 'rxjs';
 
-import { profile } from '../stores/profile';
-import { User } from '../stores/user';
-
 @Component({
-  selector: 'current-user',
+  selector: 'app-current-user',
   template: '<p>{{ text }}</p>'
 })
 export class CurrentUserComponent implements OnInit {

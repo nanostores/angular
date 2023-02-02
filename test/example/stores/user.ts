@@ -6,7 +6,7 @@ export type IUser = {
   updatedAt: number;
 };
 
-export const User = mapTemplate<IUser>((newPost, id) => {
+export const User = mapTemplate<IUser>((newPost) => {
   newPost.setKey('name', 'New User')
   newPost.setKey('updatedAt', Date.now())
 })

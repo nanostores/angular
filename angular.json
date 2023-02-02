@@ -71,6 +71,18 @@
           "options": {
             "browserTarget": "demo:build"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["test/**/*.ts", "src/**/*.html"]
+          },
+          "configurations": {
+            "dev": {
+              "builder": "@angular-eslint/builder:lint",
+              "lintFilePatterns": ["test/**/*.ts", "test/**/*.html"]
+            }
+          }
         }
       }
     },
