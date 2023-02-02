@@ -14,7 +14,6 @@ export class NanostoresService implements OnDestroy {
   * @param store Store instance.
   * @returns Observable that contains current Store value.
   */
-  // useStore(store: Store):  Observable<StoreValue<SomeStore>>;
   useStore(store: Store): Observable<any> {
     let state$ = new BehaviorSubject(store.get());
     this.unbind = store.subscribe(value => {
