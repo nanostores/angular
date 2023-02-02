@@ -9,7 +9,7 @@ with many atomic tree-shakable stores.
 ## How to install
 
 ```sh
-npm install @nanostores/angular
+pnpm add @nanostores/angular # or npm or yarn
 ```
 
 ## How to use
