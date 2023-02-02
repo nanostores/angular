@@ -19,7 +19,6 @@ npm install @nanostores/angular
 import { NANOSTORES, NanostoresService } from '@nanostores/angular';
 
 @NgModule({ providers: [{ provide: NANOSTORES, useClass: NanostoresService }], ... })
-export class AppModule { }
 ```
 
 **app.component.ts:**
