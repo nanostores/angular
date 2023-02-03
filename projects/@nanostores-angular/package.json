@@ -3,6 +3,17 @@
   "version": "0.0.0",
   "description": "Angular integration for Nano Stores, a tiny state manager with many atomic tree-shakable stores",
   "license": "MIT",
+  "publishConfig": {
+    "directory": "package"
+  },
+  "scripts": {
+    "prepublishOnly": "rm -rf ./package && clean-publish",
+    "postpublish": "rm -rf ./package"
+  },
+  "clean-publish": {
+    "withoutPublish": true,
+    "tempDir": "package"
+  },
   "keywords": [
     "store",
     "state",
@@ -18,5 +29,8 @@
   },
   "engines": {
     "node": ">= 14"
+  },
+  "devDependencies": {
+    "clean-publish": "^4.1.1"
   }
 }
