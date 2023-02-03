@@ -32,18 +32,24 @@ specifiers:
   typescript: ~4.4.2
   zone.js: ^0.11.0
 
+dependencies:
+  '@angular/common': 13.3.12_akmha7wclo3jmfiis3pvxto3lq
+  '@angular/compiler': 13.3.12
+  '@angular/core': 13.3.12_rxjs@7.5.7+zone.js@0.11.8
+  '@angular/platform-browser': 13.3.12_i5lagu3afq4ldmzhypp6rnuyzy
+  '@angular/platform-browser-dynamic': 13.3.12_lfh4sfbrsw42sg4wkiqtq6co5y
+  nanostores: 0.7.3
+  rxjs: 7.5.7
+  tslib: 2.5.0
+  zone.js: 0.11.8
+
 devDependencies:
   '@angular-devkit/build-angular': 13.3.10_inalwq5cppbbqkdvuf3nuf5zr4
   '@angular-eslint/builder': 15.2.0_4lztcmfj3iyz2vssbslohlxm4u
   '@angular-eslint/schematics': 13.5.0_ciqnsm7vsny7zdf2joylax6nie
   '@angular-eslint/template-parser': 15.2.0_4lztcmfj3iyz2vssbslohlxm4u
   '@angular/cli': 13.3.10
-  '@angular/common': 13.3.12_akmha7wclo3jmfiis3pvxto3lq
-  '@angular/compiler': 13.3.12
   '@angular/compiler-cli': 13.3.12_6gjlfip4dbepap3krokba567ma
-  '@angular/core': 13.3.12_rxjs@7.5.7+zone.js@0.11.8
-  '@angular/platform-browser': 13.3.12_i5lagu3afq4ldmzhypp6rnuyzy
-  '@angular/platform-browser-dynamic': 13.3.12_lfh4sfbrsw42sg4wkiqtq6co5y
   '@types/jasmine': 4.3.1
   '@types/node': 18.11.18
   '@typescript-eslint/eslint-plugin': 5.50.0_73gaerhocdt3ewpw7inrdf4o3y
@@ -55,14 +61,10 @@ devDependencies:
   karma-coverage-istanbul-reporter: 2.1.1
   karma-jasmine: 5.1.0_karma@6.4.1
   karma-jasmine-html-reporter: 2.0.0_uk6l45dlsjldsnfgnal4othgyq
-  nanostores: 0.7.2
   ng-packagr: 13.3.1_fazdgr5ovid2ahbko7fn2jfcae
   process-inline-templates: link:@angular-eslint/template/process-inline-templates
   recommended: link:@angular-eslint/template/recommended
-  rxjs: 7.5.7
-  tslib: 2.5.0
   typescript: 4.4.4
-  zone.js: 0.11.8
 
 packages:
 
@@ -373,7 +375,7 @@ packages:
       '@angular/core': 13.3.12_rxjs@7.5.7+zone.js@0.11.8
       rxjs: 7.5.7
       tslib: 2.5.0
-    dev: true
+    dev: false
 
   /@angular/compiler-cli/13.3.12_6gjlfip4dbepap3krokba567ma:
     resolution: {integrity: sha512-6jrdVwexPihWlyitopc3rn2ReEkhAaMI8UWR0SOTnt3NaqNYWeio4bpeWlumgNPElDyY5rmyrmJgeaY8ICa8qA==}
@@ -404,7 +406,6 @@ packages:
     engines: {node: ^12.20.0 || ^14.15.0 || >=16.10.0}
     dependencies:
       tslib: 2.5.0
-    dev: true
 
   /@angular/core/13.3.12_rxjs@7.5.7+zone.js@0.11.8:
     resolution: {integrity: sha512-jx0YC+NbPMbxGr5bXECkCEQv2RdVxR8AJNnabkPk8ZjwCpDzROrbELwwS1kunrZUhffcD15IhWGBvf1EGHAYDw==}
@@ -416,7 +417,7 @@ packages:
       rxjs: 7.5.7
       tslib: 2.5.0
       zone.js: 0.11.8
-    dev: true
+    dev: false
 
   /@angular/platform-browser-dynamic/13.3.12_lfh4sfbrsw42sg4wkiqtq6co5y:
     resolution: {integrity: sha512-/hBggov0PxK/KNJqIu3MVc5k8f0iDbygDP8Z1k/J0FcllOSRdO4LsQd1fsCfGfwIUf0YWGyD7KraSGpBBiWlFg==}
@@ -432,7 +433,7 @@ packages:
       '@angular/core': 13.3.12_rxjs@7.5.7+zone.js@0.11.8
       '@angular/platform-browser': 13.3.12_i5lagu3afq4ldmzhypp6rnuyzy
       tslib: 2.5.0
-    dev: true
+    dev: false
 
   /@angular/platform-browser/13.3.12_i5lagu3afq4ldmzhypp6rnuyzy:
     resolution: {integrity: sha512-sfhQqU4xjTJCjkH62TQeH5/gkay/KzvNDF95J6NHi/Q6p2dbtzZdXuLJKR/sHxtF2kc505z5v9RNm6XMSXM1KA==}
@@ -448,7 +449,7 @@ packages:
       '@angular/common': 13.3.12_akmha7wclo3jmfiis3pvxto3lq
       '@angular/core': 13.3.12_rxjs@7.5.7+zone.js@0.11.8
       tslib: 2.5.0
-    dev: true
+    dev: false
 
   /@assemblyscript/loader/0.10.1:
     resolution: {integrity: sha512-H71nDOOL8Y7kWRLqf6Sums+01Q5msqBW2KhDUTemh1tvY04eSkSXrK0uj/4mmY0Xr16/3zyZmsrxN7CKuRbNRg==}
@@ -5167,8 +5168,8 @@ packages:
     dev: true
     optional: true
 
-  /immutable/4.2.2:
-    resolution: {integrity: sha512-fTMKDwtbvO5tldky9QZ2fMX7slR0mYpY5nbnFWYp0fOzDhHqhgIw9KoYgxLWsoNTS9ZHGauHj18DTyEw6BK3Og==}
+  /immutable/4.2.3:
+    resolution: {integrity: sha512-IHpmvaOIX4VLJwPOuQr1NpeBr2ZG6vpIj3blsLVxXRWJscLioaJRStqC+NcBsLeCDsnGlPpXd5/WZmnE7MbsKA==}
     dev: true
 
   /import-fresh/3.3.0:
@@ -6162,10 +6163,10 @@ packages:
     hasBin: true
     dev: true
 
-  /nanostores/0.7.2:
-    resolution: {integrity: sha512-Gi6QyppoEktYgKdQf3O/UZ05BSD5m3J1f0KSyV9+vvKC3lfKfPmC8MFifUypg9vfHVIBGBjIvvKIX4Jkm5CgrA==}
+  /nanostores/0.7.3:
+    resolution: {integrity: sha512-Y9vjY/amja27yjYxj/zlWh+gvXX6pSb8IeF2DK1vCNiYKlZclXbUrSE36gjd1F53+Avg5/bUzKuiej/v82HjPQ==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
-    dev: true
+    dev: false
 
   /natural-compare-lite/1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
@@ -7783,7 +7784,6 @@ packages:
     resolution: {integrity: sha512-z9MzKh/UcOqB3i20H6rtrlaE/CgjLOvheWK/9ILrbhROGTweAi1BaFsTT9FbwZi5Trr1qNRs+MXkhmR06awzQA==}
     dependencies:
       tslib: 2.5.0
-    dev: true
 
   /safe-buffer/5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
@@ -7825,7 +7825,7 @@ packages:
     hasBin: true
     dependencies:
       chokidar: 3.5.3
-      immutable: 4.2.2
+      immutable: 4.2.3
       source-map-js: 1.0.2
     dev: true
 
@@ -7835,7 +7835,7 @@ packages:
     hasBin: true
     dependencies:
       chokidar: 3.5.3
-      immutable: 4.2.2
+      immutable: 4.2.3
       source-map-js: 1.0.2
     dev: true
 
@@ -8446,7 +8446,6 @@ packages:
 
   /tslib/2.5.0:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
-    dev: true
 
   /tsutils/3.21.0_typescript@4.4.4:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
@@ -8905,4 +8904,4 @@ packages:
     resolution: {integrity: sha512-82bctBg2hKcEJ21humWIkXRlLBBmrc3nN7DFh5LGGhcyycO2S7FN8NmdvlcKaGFDNVL4/9kFLmwmInTavdJERA==}
     dependencies:
       tslib: 2.5.0
-    dev: true
+    dev: false

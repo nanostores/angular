@@ -6,20 +6,22 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test --browsers ChromeHeadless",
     "lint": "ng lint"
   },
   "private": true,
-  "devDependencies": {
+  "dependencies": {
     "@angular/common": "^13.3.12",
     "@angular/core": "^13.3.12",
     "@angular/compiler": "^13.3.12",
-    "nanostores": "^0.7.1",
-    "rxjs": "~7.5.0",
-    "tslib": "^2.3.0",
-    "zone.js": "^0.11.0",
     "@angular/platform-browser": "^13.3.12",
     "@angular/platform-browser-dynamic": "^13.3.12",
+    "rxjs": "~7.5.0",
+    "zone.js": "^0.11.0",
+    "nanostores": "^0.7.1",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
     "@angular-devkit/build-angular": "^13.3.10",
     "@angular-eslint/builder": "^15.2.0",
     "@angular-eslint/schematics": "13.5.0",
