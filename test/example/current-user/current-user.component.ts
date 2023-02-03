@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NanostoresService } from '@nanostores/angular';
+import { observeStore } from '@nanostores/angular';
 import { User } from '../stores/user';
 import { profile } from '../stores/profile';
 import { switchMap } from 'rxjs';
@@ -11,11 +11,9 @@ import { switchMap } from 'rxjs';
 export class CurrentUserComponent implements OnInit {
   text = '';
 
-  constructor(private nanostores: NanostoresService) { }
-
   ngOnInit() {
-    this.nanostores.useStore(profile).pipe(
-      switchMap((userId: string) => this.nanostores.useStore(User(userId)))
+    observeStore(profile).pipe(
+      switchMap(({ userId }) => observeStore(User(userId)))
     )
     .subscribe(user => this.text = `User name is ${user.name}`);
   }

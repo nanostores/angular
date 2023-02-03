@@ -1,4 +1,4 @@
-import { NANOSTORES, NanostoresService } from '@nanostores/angular';
+import {NANOSTORES, NanostoresModule, NanostoresService} from '@nanostores/angular';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CurrentUserAsyncPipeComponent } from './current-user-async-pipe/current-user-async-pipe.component';
@@ -12,7 +12,8 @@ import { NgModule } from '@angular/core';
     CurrentUserAsyncPipeComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NanostoresModule,
   ],
   providers: [{ provide: NANOSTORES, useClass: NanostoresService }],
   bootstrap: [AppComponent]
