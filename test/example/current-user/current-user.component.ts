@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { observeStore } from '@nanostores/angular';
+import { switchMap } from 'rxjs';
 import { User } from '../stores/user';
 import { profile } from '../stores/profile';
-import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-current-user',

@@ -3,8 +3,13 @@ import { Store } from "nanostores";
 
 export function observeStore<T>(store: Store<T>): Observable<T> {
     return new Observable<T>((subscriber) => {
+        let lastValue: T = store.get();
+        subscriber.next(lastValue);
         return store.subscribe((value) => {
-            subscriber.next(value);
+            if (value !== lastValue) {
+                lastValue = value;
+                subscriber.next(value);
+            }
         });
     });
 }

@@ -1,7 +1,7 @@
-import { User } from '../stores/user';
 import { Component } from '@angular/core';
+import { computed } from "nanostores";
+import { User } from '../stores/user';
 import { profile } from '../stores/profile';
-import { computed  } from "nanostores";
 
 @Component({
   selector: 'app-current-user-async-pipe',
