@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { computed } from "nanostores";
-import { User } from '../stores/user';
+import { IUser, User } from '../stores/user';
 import { profile } from '../stores/profile';
+import { NanostoresService } from "@nanostores/angular";
+import { Observable, switchMap } from "rxjs";
 
 @Component({
   selector: 'app-current-user-async-pipe',
   template: `
-    <p *ngIf="(getUser(userId | stored) | stored) as user">{{ user.name }}</p>
+    <p *ngIf="(currentUser$ | async) as user">{{ user.name }}</p>
     <div>{{ profile | stored | json }}</div>
   `
 })
@@ -14,15 +15,8 @@ export class CurrentUserAsyncPipeComponent {
 
   profile = profile;
 
-  userId = computed(profile, ({ userId }) => userId)
+  currentUser$: Observable<IUser> = this.nanostores.useStore(profile)
+    .pipe(switchMap(({ userId }) => this.nanostores.useStore(User(userId))));
 
-  constructor() {
-    setInterval(() => {
-      profile.set({ userId: Math.random().toString(), name: 'John' });
-    }, 1000);
-  }
-
-  getUser(userId: string) {
-    return User(userId);
-  }
+  constructor(private nanostores: NanostoresService) {}
 }
