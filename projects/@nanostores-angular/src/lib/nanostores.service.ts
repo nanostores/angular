@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, finalize, Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, defer, finalize, Observable, ReplaySubject } from 'rxjs';
 import { distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { Store } from 'nanostores';
 
@@ -14,13 +14,14 @@ export class NanostoresService implements OnDestroy {
   * @returns Observable that contains current Store value.
   */
   useStore<T>(store: Store<T>): Observable<T> {
-    const state$ = new BehaviorSubject(store.get());
-    const unbind = store.subscribe(value => {
-      state$.next(value);
-    });
-    return state$.pipe(
+    return defer(() => {
+      const state$ = new BehaviorSubject(store.get());
+      const unbind = store.subscribe(value => {
+        state$.next(value);
+      });
+      return state$.pipe(finalize(unbind));
+    }).pipe(
       distinctUntilChanged(),
-      finalize(unbind),
       takeUntil(this.destroyed$)
     );
   }
