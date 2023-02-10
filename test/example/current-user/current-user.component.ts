@@ -15,7 +15,7 @@ export class CurrentUserComponent implements OnInit {
 
   ngOnInit() {
     this.nanostores.useStore(profile).pipe(
-      switchMap((userId: string) => this.nanostores.useStore(User(userId)))
+      switchMap(({ userId }) => this.nanostores.useStore(User(userId)))
     )
     .subscribe(user => this.text = `User name is ${user.name}`);
   }
