@@ -38,7 +38,7 @@ import { IUser, User } from '../stores/user';
 })
 export class AppComponent {
   currentUser$: Observable<IUser> = this.nanostores.useStore(profile)
-    .pipe(switchMap(userId => this.nanostores.useStore(User(userId))));
+    .pipe(switchMap(({ userId }) => this.nanostores.useStore(User(userId))));
 
   constructor(private nanostores: NanostoresService) { }
 }
@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.nanostores.useStore(profile).pipe(
-      switchMap((userId: string) => this.nanostores.useStore(User(userId)))
+      switchMap(({ userId }) => this.nanostores.useStore(User(userId)))
     )
     .subscribe(user => this.text = `User name is ${user.name}`);
   }
