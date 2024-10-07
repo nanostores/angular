@@ -5,17 +5,9 @@
     "outDir": "../out-tsc/app",
     "types": ["node"],
     "paths": {
-      "@nanostores/angular": [
-        "../projects/@nanostores-angular/src/"
-      ],
-      "@angular/*": [ "./node_modules/@angular/*"],
+      "@nanostores/angular": ["../projects/@nanostores-angular/src/"],
+      "@angular/*": ["./node_modules/@angular/*"]
     }
   },
-  "exclude": [
-    "test.ts",
-    "**/*.spec.ts"
-  ],
-  "angularCompilerOptions": {
-    "enableIvy": true
-  }
+  "exclude": ["test.ts", "**/*.spec.ts"]
 }
