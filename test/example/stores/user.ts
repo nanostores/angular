@@ -1,4 +1,4 @@
-import { mapTemplate } from 'nanostores';
+import { atom, type WritableAtom } from "nanostores";
 
 export type IUser = {
   id: string;
@@ -6,7 +6,16 @@ export type IUser = {
   updatedAt: number;
 };
 
-export const User = mapTemplate<IUser>((newPost) => {
-  newPost.setKey('name', 'New User')
-  newPost.setKey('updatedAt', Date.now())
-})
+const userCache: Record<string, WritableAtom<IUser>> = {};
+
+export const User = (id: string) => {
+  if (!userCache[id]) {
+    userCache[id] = atom<IUser>({
+      id,
+      name: "New User",
+      updatedAt: Date.now(),
+    });
+  }
+
+  return userCache[id];
+};
