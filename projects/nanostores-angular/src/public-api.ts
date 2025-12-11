@@ -1,5 +1,5 @@
 /*
- * Public API Surface of @nanostores/angular
+ * Public API Surface of nanostores-angular
  */
 
 export * from './lib/nanostores.service';
