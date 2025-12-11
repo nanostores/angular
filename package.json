@@ -22,9 +22,9 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.2.21",
-    "@angular-eslint/builder": "^17.5.3",
-    "@angular-eslint/schematics": "^17.5.3",
-    "@angular-eslint/template-parser": "^17.5.3",
+    "@angular-eslint/builder": "^18.4.3",
+    "@angular-eslint/schematics": "^18.4.3",
+    "@angular-eslint/template-parser": "^18.4.3",
     "@angular/cli": "~18.2.21",
     "@angular/compiler-cli": "^18.2.14",
     "@types/jasmine": "~4.3.0",
