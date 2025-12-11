@@ -3,8 +3,12 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "@nanostores/angular": ["dist/@nanostores/angular/"],
-      "@angular/*": ["./node_modules/@angular/*"]
+      "@nanostores/angular": [
+        "dist/@nanostores/angular/"
+      ],
+      "@angular/*": [
+        "./node_modules/@angular/*"
+      ]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -18,12 +22,15 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2020",
     "useDefineForClassFields": false,
-    "lib": ["ES2021", "dom"]
+    "lib": [
+      "ES2021",
+      "dom"
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

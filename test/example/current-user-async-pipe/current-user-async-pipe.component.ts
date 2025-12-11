@@ -6,7 +6,7 @@ import { IUser, User } from "../stores/user";
 
 @Component({
   selector: "app-current-user-async-pipe",
-  template: '<p *ngIf="(currentUser$ | async) as user">{{ user.name }}</p>',
+  template: '@if ((currentUser$ | async); as user) {<p>{{ user.name }}</p>}',
   standalone: false,
 })
 export class CurrentUserAsyncPipeComponent {
