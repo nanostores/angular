@@ -15,18 +15,22 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/demo",
+            "outputPath": {
+              "base": "dist/demo"
+            },
             "index": "test/index.html",
-            "main": "test/main.ts",
-            "polyfills": "test/polyfills.ts",
+            "polyfills": [
+              "test/polyfills.ts"
+            ],
             "tsConfig": "test/tsconfig.app.json",
             "styles": [
               "test/styles.scss"
             ],
             "scripts": [],
-            "aot": true
+            "aot": true,
+            "browser": "test/main.ts"
           },
           "configurations": {
             "production": {
@@ -36,8 +40,6 @@
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
