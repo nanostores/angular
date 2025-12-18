@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { NanostoresService } from "../../projects/@nanostores-angular/src/lib/nanostores.service";
-import { NANOSTORES } from "../../projects/@nanostores-angular/src/lib/nanostores.token";
+import { NANOSTORES, NanostoresService } from "@nanostores/angular";
 import { AppComponent } from "./app.component";
 import { CurrentUserAsyncPipeComponent } from "./current-user-async-pipe/current-user-async-pipe.component";
 import { CurrentUserComponent } from "./current-user/current-user.component";

@@ -1,6 +1,6 @@
 import { Component, inject } from "@angular/core";
+import { NanostoresService } from "@nanostores/angular";
 import { Observable, switchMap } from "rxjs";
-import { NanostoresService } from "../../../projects/@nanostores-angular/src/lib/nanostores.service";
 import { profile } from "../stores/profile";
 import { IUser, User } from "../stores/user";
 

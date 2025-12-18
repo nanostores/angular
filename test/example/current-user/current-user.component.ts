@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from "@angular/core";
+import { NanostoresService } from "@nanostores/angular";
 import { switchMap } from "rxjs";
-import { NanostoresService } from "../../../projects/@nanostores-angular/src/lib/nanostores.service";
 import { profile } from "../stores/profile";
 import { User } from "../stores/user";
 
