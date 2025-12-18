@@ -1,17 +1,17 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { switchMap } from 'rxjs';
-import { NanostoresService } from '../../../projects/nanostores-angular/src/lib/nanostores.service';
-import { profile } from '../stores/profile';
-import { User } from '../stores/user';
+import { Component, inject, OnInit } from "@angular/core";
+import { NanostoresService } from "@nanostores/angular";
+import { switchMap } from "rxjs";
+import { profile } from "../stores/profile";
+import { User } from "../stores/user";
 
 @Component({
-  selector: 'app-current-user',
-  template: '<p>{{ text }}</p>',
+  selector: "app-current-user",
+  template: "<p>{{ text }}</p>",
   standalone: true,
 })
 export class CurrentUserComponent implements OnInit {
   private nanostores = inject(NanostoresService);
-  text = '';
+  text = "";
 
   ngOnInit() {
     this.nanostores

@@ -8,7 +8,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "paths": {
-      "nanostores-angular": ["./dist/nanostores-angular"]
+      "@nanostores/angular": ["./dist/@nanostores/angular"]
     },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
