@@ -1,0 +1,26 @@
+{
+  "name": "@nanostores/angular",
+  "version": "21.0.0",
+  "description": "Angular integration for Nano Stores, a tiny state manager with many atomic tree-shakable stores",
+  "license": "MIT",
+  "keywords": [
+    "store",
+    "state",
+    "state manager",
+    "nanostores",
+    "ng nanostores",
+    "angular"
+  ],
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "engines": {
+    "node": ">= 20"
+  },
+  "peerDependencies": {
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.4",
+    "nanostores": "^1.1.0"
+  },
+  "sideEffects": false
+}
